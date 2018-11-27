@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.core.env.PropertySource;
 
 @Slf4j
 @SpringBootApplication
@@ -28,5 +29,6 @@ public class DemoApplication {
             Object key = names.nextElement();
             log.info("key : {} | value : {}", key, properties.get(key));
         }
+        log.info("-------------------------------------");
     }
 }
