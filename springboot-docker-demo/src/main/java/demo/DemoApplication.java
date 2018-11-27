@@ -12,9 +12,11 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class DemoApplication {
 
     public static void main(String[] args) {
+        log.info("## Check args : {}", Arrays.toString(args));
         ConfigurableApplicationContext ctx = SpringApplication.run(DemoApplication.class, args);
 
         log.info("## Active profile : {}", Arrays.toString(ctx.getEnvironment().getActiveProfiles()));
+        log.info("## App properties file : {}", ctx.getEnvironment().getProperty("spring.config.location"));
         log.info("## App properties file : {}", System.getProperty("spring.config.location"));
     }
 }
